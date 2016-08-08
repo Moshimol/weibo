@@ -1,0 +1,74 @@
+//
+//  PrefixHeader.pch
+//  weibo
+//
+//  Created by lushitong on 16/7/29.
+//  Copyright © 2016年 mac04. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "ThemeManager.h"
+//定义屏幕大小
+#import "SinaWeibo.h"
+#import "WeiboModel.h"
+#import "UIImageView+WebCache.h"
+#import "UIViewExt.h"
+#import "MMExampleDrawerVisualStateManager.h"
+#define kScreenwidth  ([UIScreen mainScreen].bounds.size.width)
+#define kScreenheight  ([UIScreen mainScreen].bounds.size.height)
+
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define kScreenWidth  ([UIScreen mainScreen].bounds.size.width)
+//版本号
+#define kSystemVersion ([[UIDevice currentDevice].systemVersion floatValue])
+
+#define kAppkey 2062054173
+#define KAppSerect  3a56d2b705e4d40512340e72b060af73
+
+//微博对象获取
+/**
+ *  在定义的时候  和属性的名字一样 大小写也不能改变
+ *  出现大小写的问题的时候，应该注意
+ */
+#define kSinaWeiboObject (((AppDelegate *)[UIApplication sharedApplication].delegate).sinaWeibo)
+
+#define kThemeChangeNoticficationName @"kThemeChangeNoticficationName"
+
+#define kdidSendWeibo @"kdidSendWeibo"
+//------------------------------字体颜色--------------------------------
+//More界面单元格字体颜色
+#define kMoreItemTextcolor @"More_Item_Text_color"
+
+
+//More界面，表视图中单元格分割线颜色
+#define kMoreItemLineColor @"More_Item_Line_color"
+
+//Home 微博正文颜色
+#define kHomeWeiboTextColor @"Timeline_Content_color"
+
+//Home 转发微博正文颜色
+#define kHomeReWeiboTextColor @"Detail_Content_color"
+
+//Home 时间/来源文本颜色
+#define kHomeTimeLabelTextColor @"Timeline_Time_color"
+
+//Home 用户名文本颜色
+#define kHomeUserNameTextColor @"Timeline_Name_color"
+//微博正文中 超链接文本颜色
+#define kLinkColor @"Link_color"
+
+//------------------------字体大小------------------------
+//微博正文字体大小
+#define kWeiboTextFont [UIFont systemFontOfSize:16]
+//转发微博字体大小
+#define kReWeiboTextFont [UIFont systemFontOfSize:14]
+
+
+
+
+#endif /* PrefixHeader_pch */
