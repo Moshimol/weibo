@@ -339,6 +339,7 @@
 		0947522E1D56D88200F54904 /* UserHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0947522C1D56D88200F54904 /* UserHeaderView.m */; };
 		0947522F1D56D88200F54904 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0947522D1D56D88200F54904 /* UserHeaderView.xib */; };
 		09574E2E1D518BB400FC0698 /* WeiboCellLauout.m in Sources */ = {isa = PBXBuildFile; fileRef = 09574E2D1D518BB400FC0698 /* WeiboCellLauout.m */; };
+		095C86E11D5965C900B99BB9 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 095C86E01D5965C900B99BB9 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0975EACB1D5039EB00067A9C /* WeiboModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0975EACA1D5039EB00067A9C /* WeiboModel.m */; };
 		0975EACE1D5039F800067A9C /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0975EACD1D5039F800067A9C /* UserModel.m */; };
 		0975EAD51D504AF300067A9C /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0975EAD11D504AF300067A9C /* NSObject+YYModel.m */; };
@@ -388,7 +389,6 @@
 		09CF9E431D54357700A658FF /* UIScrollView+PullDownRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CF9E3F1D54357600A658FF /* UIScrollView+PullDownRefresh.m */; };
 		09CF9E441D54357700A658FF /* UIScrollView+PullUpRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CF9E411D54357700A658FF /* UIScrollView+PullUpRefresh.m */; };
 		09CF9E471D54707200A658FF /* msgcome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 09CF9E461D54707200A658FF /* msgcome.wav */; };
-		09CF9E631D548BF500A658FF /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CF9E621D548BF500A658FF /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		09CF9E651D548C6000A658FF /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CF9E641D548C6000A658FF /* libicucore.tbd */; };
 		09EE85F21D58254900298F01 /* WXCircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EE85E91D58254900298F01 /* WXCircleProgressView.m */; };
 		09EE85F31D58254900298F01 /* WXPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EE85EB1D58254900298F01 /* WXPhoto.m */; };
@@ -753,6 +753,8 @@
 		0947522D1D56D88200F54904 /* UserHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
 		09574E2C1D518BB400FC0698 /* WeiboCellLauout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboCellLauout.h; sourceTree = "<group>"; };
 		09574E2D1D518BB400FC0698 /* WeiboCellLauout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboCellLauout.m; sourceTree = "<group>"; };
+		095C86DF1D5965C900B99BB9 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		095C86E01D5965C900B99BB9 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		0975EAC91D5039EB00067A9C /* WeiboModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboModel.h; sourceTree = "<group>"; };
 		0975EACA1D5039EB00067A9C /* WeiboModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboModel.m; sourceTree = "<group>"; };
 		0975EACC1D5039F800067A9C /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -846,8 +848,6 @@
 		09CF9E411D54357700A658FF /* UIScrollView+PullUpRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PullUpRefresh.m"; sourceTree = "<group>"; };
 		09CF9E421D54357700A658FF /* WXRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXRefresh.h; sourceTree = "<group>"; };
 		09CF9E461D54707200A658FF /* msgcome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = msgcome.wav; sourceTree = "<group>"; };
-		09CF9E611D548BF500A658FF /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		09CF9E621D548BF500A658FF /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		09CF9E641D548C6000A658FF /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		09EE85E81D58254900298F01 /* WXCircleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXCircleProgressView.h; sourceTree = "<group>"; };
 		09EE85E91D58254900298F01 /* WXCircleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXCircleProgressView.m; sourceTree = "<group>"; };
@@ -902,6 +902,8 @@
 		0916DE311D558B9A00EA33F3 /* WXLabel */ = {
 			isa = PBXGroup;
 			children = (
+				095C86DF1D5965C900B99BB9 /* RegexKitLite.h */,
+				095C86E01D5965C900B99BB9 /* RegexKitLite.m */,
 				0916DE341D558B9A00EA33F3 /* WXLabel.h */,
 				0916DE351D558B9A00EA33F3 /* WXLabel.m */,
 			);
@@ -1633,7 +1635,6 @@
 				0916DE381D558BE400EA33F3 /* UIViewExt.h */,
 				0916DE391D558BE400EA33F3 /* UIViewExt.m */,
 				0916DE311D558B9A00EA33F3 /* WXLabel */,
-				09CF9E601D548BF500A658FF /* RegexKitLite */,
 				09CF9E3D1D54357600A658FF /* WXRefresh */,
 				098BB5151D508465003CFA16 /* SDWebImage */,
 				0975EACF1D504AF300067A9C /* YYModel */,
@@ -1698,16 +1699,6 @@
 				09CF9E461D54707200A658FF /* msgcome.wav */,
 			);
 			path = "声音";
-			sourceTree = "<group>";
-		};
-		09CF9E601D548BF500A658FF /* RegexKitLite */ = {
-			isa = PBXGroup;
-			children = (
-				09CF9E611D548BF500A658FF /* RegexKitLite.h */,
-				09CF9E621D548BF500A658FF /* RegexKitLite.m */,
-			);
-			name = RegexKitLite;
-			path = "../../../../资料/第三方类库/RegexKitLite";
 			sourceTree = "<group>";
 		};
 		09EE85E71D58254900298F01 /* 图片浏览 */ = {
@@ -2194,6 +2185,7 @@
 				09471D981D4F48B6001BA4C1 /* LeftViewController.m in Sources */,
 				09B4942D1D4AFA66005A88EC /* AppDelegate.m in Sources */,
 				098BB5131D507C00003CFA16 /* TableViewCell.m in Sources */,
+				095C86E11D5965C900B99BB9 /* RegexKitLite.m in Sources */,
 				09B4945F1D4B00A6005A88EC /* BaseViewController.m in Sources */,
 				0902B3A71D4C9D050011208D /* ThemButton.m in Sources */,
 				09B498D31D4B4C05005A88EC /* SinaWeibo.m in Sources */,
@@ -2218,7 +2210,6 @@
 				0916DE3D1D55BE7700EA33F3 /* WeiboViewController.m in Sources */,
 				098BB5381D508465003CFA16 /* NSData+ImageContentType.m in Sources */,
 				0975EAD51D504AF300067A9C /* NSObject+YYModel.m in Sources */,
-				09CF9E631D548BF500A658FF /* RegexKitLite.m in Sources */,
 				09B4946C1D4B0110005A88EC /* HomeViewController.m in Sources */,
 				09471D921D4F4890001BA4C1 /* MMDrawerBarButtonItem.m in Sources */,
 				098BB5401D508465003CFA16 /* UIButton+WebCache.m in Sources */,
