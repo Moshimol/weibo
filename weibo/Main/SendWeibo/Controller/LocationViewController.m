@@ -8,9 +8,13 @@
 
 #import "LocationViewController.h"
 #import <CoreLocation/CoreLocation.h>
-@interface LocationViewController ()<CLLocationManagerDelegate>{
+#import "AppDelegate.h"
+#define kSinaweibolocationAPI @"place/nearby/pois.json"
+@interface LocationViewController ()<CLLocationManagerDelegate,SinaWeiboRequestDelegate,UITableViewDelegate,UITableViewDataSource>{
     
     CLLocationManager *_locationManager;
+    NSArray *_locationArray;
+    UITableView *_tableView;
 }
 
 @end
@@ -20,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title =@"开启定位服务";
+    [self creatTableView];
     [self startLocation];
     
 }
@@ -42,16 +47,77 @@
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray<CLLocation *> *)locations{
     
-    NSLog(@"locations = %@",locations);
+    //    NSLog(@"locations = %@",locations);
+    
+    [manager stopUpdatingHeading];
+    CLLocation *location = [locations firstObject];
+    double lon = location.coordinate.longitude;
+    double lat  = location.coordinate.latitude;
+    NSLog(@"精度%f,维度%f",lon,lat);
+    
+    SinaWeibo *wb = kSinaWeiboObject;
+    NSDictionary *param = @{@"long":[NSString stringWithFormat:@"%f",lon],
+                            @"lat":[NSString stringWithFormat:@"%f",lat]};
+    [wb requestWithURL:kSinaweibolocationAPI params:[param mutableCopy] httpMethod:@"GET" delegate:self];
+    
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
+    
+    //    NSLog(@"%@",result);
+    
+    
+    _locationArray = result[@"pois"];
+    [_tableView reloadData];
+    
+}
+#pragma -mark 单元格的创建
+-(void)creatTableView{
+    
+    _tableView  = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource= self;
+    
+    _tableView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:_tableView];
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return _locationArray.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if (cell==nil) {
+        cell  = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        cell.backgroundColor = [UIColor clearColor];
+    }
+    
+    NSDictionary *dic = _locationArray[indexPath.row];
+    cell.textLabel.text = dic[@"title"];
+    if (![dic[@"address"] isKindOfClass:[NSNull class]]) {
+        cell.detailTextLabel.text = dic[@"address"];
+    }
+    else{
+        
+        cell.detailTextLabel.text=nil;
+    }
+    
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:dic[@"icon"]]];
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (_block) {
+        _block(_locationArray[indexPath.row]);
+        
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)addLocationResultBlock:(LocationResultBlock)block{
+    
+    _block = [block copy];
+}
+
 
 @end

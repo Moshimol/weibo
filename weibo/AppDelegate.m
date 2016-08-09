@@ -74,8 +74,8 @@
     
     
     
-    _sinaWeibo = [[SinaWeibo alloc]initWithAppKey:@"2062054173"
-                                        appSecret:@"3a56d2b705e4d40512340e72b060af73"
+    _sinaWeibo = [[SinaWeibo alloc]initWithAppKey:kAppkey
+                                        appSecret:KAppSerect
                                    appRedirectURI:@"http://www.cnblogs.com/Moshimol/"
                                       andDelegate:self];
     BOOL auther = [self readAuthData];

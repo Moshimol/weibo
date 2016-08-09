@@ -8,18 +8,28 @@
 
 #import "SendWeiboViewController.h"
 #import "ThemButton.h"
+#import "ThemeLabel.h"
 #import "AppDelegate.h"
 #import "LocationViewController.h"
 @class ThemButton;
 #define kToolViewHeight 40
+#define kLocationViewHeight 20
 #define kSendWeiboAPI @"statuses/update.json"
 #define kSendWeiboPhotoApi @"statuses/upload.json"
+#import "SinaWeibo+SendWeibo.h"
 @interface SendWeiboViewController ()<SinaWeiboRequestDelegate>{
     
     UITextView *_inputTextView; //输入框
     UIView *_toolView;          //工具视图
+    
+    //定位相关视图
+    UIView *_locationView;
+    UIImageView *_locationIconImageView;
+    ThemeLabel *_locationNameLabel;
+    ThemButton *_locationCancelButton;
+    
 }
-
+@property(nonatomic,strong) NSDictionary *locationData;
 @end
 
 @implementation SendWeiboViewController
@@ -34,10 +44,73 @@
     [self createNavigationBarButton];
     [self creatrInputView];
     [self createToolView];
+    [self createLocationViews];
     
     
 }
-
+#pragma -mark 视图上面的地理位置显示
+- (void)createLocationViews {
+    
+    //创建父视图
+    _locationView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, kScreenWidth - 10, kLocationViewHeight)];
+    //    _locationView.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:_locationView];
+    _locationView.bottom = _toolView.top;
+    
+    //icon
+    _locationIconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kLocationViewHeight, kLocationViewHeight)];
+    //    _locationIconImageView.backgroundColor = [UIColor greenColor];
+    [_locationView addSubview:_locationIconImageView];
+    
+    //Label
+    _locationNameLabel = [[ThemeLabel alloc] initWithFrame:CGRectMake(kLocationViewHeight, 0, 200, kLocationViewHeight)];
+    _locationNameLabel.colorName = kMoreItemTextcolor;
+    _locationNameLabel.text = @"杭州职业技术学院";
+    [_locationView addSubview:_locationNameLabel];
+    //Button
+    _locationCancelButton = [ThemButton buttonWithType:UIButtonTypeCustom];
+    _locationCancelButton.frame = CGRectMake(0, 0, kLocationViewHeight, kLocationViewHeight);
+    _locationCancelButton.left = _locationNameLabel.right;
+    _locationCancelButton.backgroundImageName = @"compose_toolbar_clear.png";
+    [_locationView addSubview:_locationCancelButton];
+    //添加点击
+    [_locationCancelButton addTarget:self action:@selector(locationCancelButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    //默认隐藏
+    _locationView.hidden = YES;
+    
+}
+#pragma mark - Action
+//取消定位
+- (void)locationCancelButtonAction {
+    self.locationData = nil;
+}
+#pragma mark - 位置信息填充
+//在locationData的SET方法中 来设置显示的位置数据
+- (void)setLocationData:(NSDictionary *)locationData {
+    
+    
+    
+    if (_locationData != locationData) {
+        _locationData = [locationData copy];
+        if (_locationData == nil) {
+            _locationView.hidden = YES;
+        } else {
+            _locationView.hidden = NO;
+            _locationNameLabel.text = _locationData[@"title"];
+            [_locationIconImageView sd_setImageWithURL:[NSURL URLWithString:_locationData[@"icon"]]];
+            
+            //改变Label宽度
+            NSDictionary *attributes = @{NSFontAttributeName : _locationNameLabel.font};
+            CGRect rect = [_locationNameLabel.text boundingRectWithSize:CGSizeMake(kScreenWidth - 10 - kLocationViewHeight * 2, kLocationViewHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
+            CGFloat width = rect.size.width;
+            
+            _locationNameLabel.width = width;
+            _locationCancelButton.left = _locationNameLabel.right;
+        }
+        
+        
+    }
+}
 - (void)creatrInputView {
     _inputTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64 - kToolViewHeight)];
     //    _inputTextView.backgroundColor = [UIColor orangeColor];
@@ -78,10 +151,14 @@
 }
 #pragma -mark 点击位置进入位置选择界面
 - (void)toolBarButtonAction:(UIButton *)button {
-    if (button.tag == 4) {
+    if (button.tag == 3) {
         //打开定位界面
         LocationViewController *locaiton = [[LocationViewController alloc] init];
-        
+        [locaiton addLocationResultBlock:^(NSDictionary *result) {
+            
+            //保存位置数据
+            self.locationData = result;
+        }];
         [self.navigationController pushViewController:locaiton animated:YES];
         
     }
@@ -99,6 +176,7 @@
     _inputTextView.height = kScreenHeight - 64 - kToolViewHeight - keyboardFrame.size.height;
     //工具栏
     _toolView.top = _inputTextView.bottom;
+    _locationView.bottom = _toolView.top;
     
 }
 
@@ -106,6 +184,7 @@
     
     _inputTextView.height = kScreenHeight - 64 - kToolViewHeight;
     _toolView.top = _inputTextView.bottom;
+    _locationView.bottom = _toolView.top;
     
 }
 #pragma -mark 创建底部视图上的按钮
@@ -147,30 +226,36 @@
         return;
     }
     SinaWeibo *wb  = kSinaWeiboObject;
+    NSMutableDictionary *params = [@{@"status":text}mutableCopy];
     
-    NSDictionary *params = @{@"status":text};
-    
-    [wb requestWithURL:kSendWeiboAPI params: [params mutableCopy] httpMethod:@"POST" delegate:self];
-    
-}
-- (void)request:(SinaWeiboRequest *)request didReceiveResponse:(NSURLResponse *)response{
-    NSHTTPURLResponse  *respon = (NSHTTPURLResponse *)response;
-    
-    if (respon.statusCode == 200) {
-        NSLog(@"发送成功");
-        _inputTextView.text = nil;
-        //发送通知
+    if (self.locationData) {
+        NSString *lon = self.locationData[@"lon"];
+        NSString *lat = self.locationData[@"lat"];
+        [params setObject:lon forKey:@"long"];
+        [params setObject:lat forKey:@"lat"];
         
+    }
+    
+    
+    //    [wb requestWithURL:kSendWeiboAPI params:params  httpMethod:@"POST" delegate:self];
+    
+    
+    [wb sendWeiboWithText:text image:nil params:params success:^(id result) {
+        //收起键盘
         [_inputTextView resignFirstResponder];
+        
+        //返回前一页面
         [self dismissViewControllerAnimated:YES completion:^{
+            //刷新微博
+            
             NSNotification *notice = [NSNotification notificationWithName:kdidSendWeibo object:nil];
             [[NSNotificationCenter defaultCenter]postNotification:notice];
             
         }];
-        
-        
-        
-    }
+    } fail:^(NSError *error) {
+        NSLog(@"失败");
+    }];
+    
     
 }
 

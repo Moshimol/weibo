@@ -27,8 +27,8 @@
 //版本号
 #define kSystemVersion ([[UIDevice currentDevice].systemVersion floatValue])
 
-#define kAppkey 2062054173
-#define KAppSerect  3a56d2b705e4d40512340e72b060af73
+#define kAppkey @"2805103027"
+#define KAppSerect  @"9f5101d06b65abeebdd89ae0b2990622"
 
 //微博对象获取
 /**
