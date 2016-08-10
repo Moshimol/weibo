@@ -63,9 +63,6 @@
 }
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
     
-    //    NSLog(@"%@",result);
-    
-    
     _locationArray = result[@"pois"];
     [_tableView reloadData];
     
