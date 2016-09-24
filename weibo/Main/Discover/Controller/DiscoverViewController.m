@@ -7,7 +7,7 @@
 //
 
 #import "DiscoverViewController.h"
-
+#import "NearbyUserViewController.h"
 @interface DiscoverViewController ()
 
 @end
@@ -18,6 +18,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
+}
+- (IBAction)NearbyUser:(id)sender {
+    NearbyUserViewController *nearby = [[NearbyUserViewController alloc] init];
+    nearby.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:nearby animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

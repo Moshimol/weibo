@@ -40,6 +40,8 @@
 #define kThemeChangeNoticficationName @"kThemeChangeNoticficationName"
 
 #define kdidSendWeibo @"kdidSendWeibo"
+
+#define kdidTextWeibo @"kdidTextWeibo"
 //------------------------------字体颜色--------------------------------
 //More界面单元格字体颜色
 #define kMoreItemTextcolor @"More_Item_Text_color"

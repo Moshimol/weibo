@@ -17,6 +17,7 @@
 #define kSendWeiboAPI @"statuses/update.json"
 #define kSendWeiboPhotoApi @"statuses/upload.json"
 #import "SinaWeibo+SendWeibo.h"
+#import "EmoticonInputView.h"
 @interface SendWeiboViewController ()<SinaWeiboRequestDelegate>{
     
     UITextView *_inputTextView; //输入框
@@ -27,6 +28,8 @@
     UIImageView *_locationIconImageView;
     ThemeLabel *_locationNameLabel;
     ThemButton *_locationCancelButton;
+    //表情选择输入框
+    EmoticonInputView *_emoticonView;
     
 }
 @property(nonatomic,strong) NSDictionary *locationData;
@@ -45,9 +48,17 @@
     [self creatrInputView];
     [self createToolView];
     [self createLocationViews];
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(receiveNotification:) name:kdidTextWeibo object:nil];
     
 }
+#pragma -mark 接收通知的方法
+- (void)receiveNotification: (NSNotification *) notification{
+    
+    NSLog(@"%@",notification.userInfo[@"chs"]);
+    _inputTextView.text = [_inputTextView.text stringByAppendingString:notification.userInfo[@"chs"]];
+    
+}
+
 #pragma -mark 视图上面的地理位置显示
 - (void)createLocationViews {
     
@@ -161,6 +172,21 @@
         }];
         [self.navigationController pushViewController:locaiton animated:YES];
         
+    }
+    else if (button.tag == 4){
+        
+        //表情界面懒加载
+        if (_emoticonView == nil) {
+            _emoticonView = [[EmoticonInputView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
+            
+        }
+        
+        _inputTextView.inputView = _inputTextView.inputView ? nil : _emoticonView;
+        
+        //重新加载输入视图
+        [_inputTextView reloadInputViews];
+        //强制弹出键盘
+        [_inputTextView becomeFirstResponder];
     }
 }
 

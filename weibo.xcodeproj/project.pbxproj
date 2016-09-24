@@ -329,6 +329,15 @@
 		0916E0B21D55D84800EA33F3 /* emoticon_keyboard_magnifier.png in Resources */ = {isa = PBXBuildFile; fileRef = 0916DF771D55D84800EA33F3 /* emoticon_keyboard_magnifier.png */; };
 		0916E0B31D55D84800EA33F3 /* emoticon_keyboard_magnifier@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0916DF781D55D84800EA33F3 /* emoticon_keyboard_magnifier@2x.png */; };
 		0916E0B41D55D84800EA33F3 /* emoticons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0916DF791D55D84800EA33F3 /* emoticons.plist */; };
+		09412FC01D5B15AB00F06DF0 /* 附近微博.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09412FBE1D5B15AB00F06DF0 /* 附近微博.jpg */; };
+		09412FC11D5B15AB00F06DF0 /* 附近的人.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09412FBF1D5B15AB00F06DF0 /* 附近的人.jpg */; };
+		09412FC41D5B16BE00F06DF0 /* NearbyUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FC31D5B16BE00F06DF0 /* NearbyUserViewController.m */; };
+		09412FC71D5B176600F06DF0 /* WeiboAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FC61D5B176600F06DF0 /* WeiboAnnotation.m */; };
+		09412FCA1D5B17D100F06DF0 /* WeiboAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FC91D5B17D100F06DF0 /* WeiboAnnotationView.m */; };
+		09412FCC1D5B180F00F06DF0 /* nearby_map_people_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 09412FCB1D5B180F00F06DF0 /* nearby_map_people_bg.png */; };
+		09412FD01D5B198900F06DF0 /* EmoticonInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FCF1D5B198900F06DF0 /* EmoticonInputView.m */; };
+		09412FD31D5B19AE00F06DF0 /* Emoticon.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FD21D5B19AE00F06DF0 /* Emoticon.m */; };
+		09412FD61D5B1B6B00F06DF0 /* EmoticonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FD51D5B1B6B00F06DF0 /* EmoticonView.m */; };
 		09471D871D4F2EF7001BA4C1 /* ThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09471D861D4F2EF7001BA4C1 /* ThemeLabel.m */; };
 		09471D921D4F4890001BA4C1 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 09471D8A1D4F4890001BA4C1 /* MMDrawerBarButtonItem.m */; };
 		09471D931D4F4890001BA4C1 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09471D8D1D4F4890001BA4C1 /* MMDrawerController.m */; };
@@ -743,6 +752,21 @@
 		0916DF771D55D84800EA33F3 /* emoticon_keyboard_magnifier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoticon_keyboard_magnifier.png; sourceTree = "<group>"; };
 		0916DF781D55D84800EA33F3 /* emoticon_keyboard_magnifier@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emoticon_keyboard_magnifier@2x.png"; sourceTree = "<group>"; };
 		0916DF791D55D84800EA33F3 /* emoticons.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoticons.plist; sourceTree = "<group>"; };
+		09412FBE1D5B15AB00F06DF0 /* 附近微博.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "附近微博.jpg"; sourceTree = "<group>"; };
+		09412FBF1D5B15AB00F06DF0 /* 附近的人.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "附近的人.jpg"; sourceTree = "<group>"; };
+		09412FC21D5B16BE00F06DF0 /* NearbyUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyUserViewController.h; sourceTree = "<group>"; };
+		09412FC31D5B16BE00F06DF0 /* NearbyUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyUserViewController.m; sourceTree = "<group>"; };
+		09412FC51D5B176600F06DF0 /* WeiboAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeiboAnnotation.h; path = weibo/Main/Discover/Controller/WeiboAnnotation.h; sourceTree = SOURCE_ROOT; };
+		09412FC61D5B176600F06DF0 /* WeiboAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeiboAnnotation.m; path = weibo/Main/Discover/Controller/WeiboAnnotation.m; sourceTree = SOURCE_ROOT; };
+		09412FC81D5B17D100F06DF0 /* WeiboAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeiboAnnotationView.h; path = weibo/Main/Discover/Controller/WeiboAnnotationView.h; sourceTree = SOURCE_ROOT; };
+		09412FC91D5B17D100F06DF0 /* WeiboAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeiboAnnotationView.m; path = weibo/Main/Discover/Controller/WeiboAnnotationView.m; sourceTree = SOURCE_ROOT; };
+		09412FCB1D5B180F00F06DF0 /* nearby_map_people_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nearby_map_people_bg.png; sourceTree = "<group>"; };
+		09412FCE1D5B198900F06DF0 /* EmoticonInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmoticonInputView.h; sourceTree = "<group>"; };
+		09412FCF1D5B198900F06DF0 /* EmoticonInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmoticonInputView.m; sourceTree = "<group>"; };
+		09412FD11D5B19AE00F06DF0 /* Emoticon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emoticon.h; sourceTree = "<group>"; };
+		09412FD21D5B19AE00F06DF0 /* Emoticon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emoticon.m; sourceTree = "<group>"; };
+		09412FD41D5B1B6B00F06DF0 /* EmoticonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmoticonView.h; sourceTree = "<group>"; };
+		09412FD51D5B1B6B00F06DF0 /* EmoticonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmoticonView.m; sourceTree = "<group>"; };
 		09471D851D4F2EF7001BA4C1 /* ThemeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeLabel.h; sourceTree = "<group>"; };
 		09471D861D4F2EF7001BA4C1 /* ThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeLabel.m; sourceTree = "<group>"; };
 		09471D891D4F4890001BA4C1 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
@@ -1263,6 +1287,19 @@
 			path = face;
 			sourceTree = "<group>";
 		};
+		09412FCD1D5B195100F06DF0 /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				09412FCE1D5B198900F06DF0 /* EmoticonInputView.h */,
+				09412FCF1D5B198900F06DF0 /* EmoticonInputView.m */,
+				09412FD11D5B19AE00F06DF0 /* Emoticon.h */,
+				09412FD21D5B19AE00F06DF0 /* Emoticon.m */,
+				09412FD41D5B1B6B00F06DF0 /* EmoticonView.h */,
+				09412FD51D5B1B6B00F06DF0 /* EmoticonView.m */,
+			);
+			path = Emotion;
+			sourceTree = "<group>";
+		};
 		09471D881D4F4890001BA4C1 /* MMDrawerController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1482,6 +1519,8 @@
 			children = (
 				09B4946D1D4B0124005A88EC /* DiscoverViewController.h */,
 				09B4946E1D4B0124005A88EC /* DiscoverViewController.m */,
+				09412FC21D5B16BE00F06DF0 /* NearbyUserViewController.h */,
+				09412FC31D5B16BE00F06DF0 /* NearbyUserViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1489,6 +1528,8 @@
 		09B494461D4AFF15005A88EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09412FC51D5B176600F06DF0 /* WeiboAnnotation.h */,
+				09412FC61D5B176600F06DF0 /* WeiboAnnotation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1496,6 +1537,8 @@
 		09B494471D4AFF15005A88EC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09412FC81D5B17D100F06DF0 /* WeiboAnnotationView.h */,
+				09412FC91D5B17D100F06DF0 /* WeiboAnnotationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1750,7 +1793,10 @@
 		09CF9E451D54701200A658FF /* 声音 */ = {
 			isa = PBXGroup;
 			children = (
+				09412FBE1D5B15AB00F06DF0 /* 附近微博.jpg */,
+				09412FBF1D5B15AB00F06DF0 /* 附近的人.jpg */,
 				09EE85F71D5838A200298F01 /* btn_map_location.png */,
+				09412FCB1D5B180F00F06DF0 /* nearby_map_people_bg.png */,
 				09EE85F81D5838A200298F01 /* btn_map_location@2x.png */,
 				09EE85F91D5838A200298F01 /* qr_btn.png */,
 				09EE85FA1D5838A200298F01 /* qr_btn@2x.png */,
@@ -1779,6 +1825,7 @@
 		09EE86021D58652C00298F01 /* SendWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				09412FCD1D5B195100F06DF0 /* Emotion */,
 				09EE86031D58652C00298F01 /* Controller */,
 				09EE86041D58652C00298F01 /* Model */,
 				09EE86051D58652C00298F01 /* View */,
@@ -1995,6 +2042,7 @@
 				0916E0661D55D84800EA33F3 /* 080.png in Resources */,
 				09EE85FD1D5838A200298F01 /* qr_btn.png in Resources */,
 				0916E02E1D55D84800EA33F3 /* 061@2x.png in Resources */,
+				09412FC11D5B15AB00F06DF0 /* 附近的人.jpg in Resources */,
 				0916E04A1D55D84800EA33F3 /* 071.gif in Resources */,
 				0916DF971D55D84800EA33F3 /* 010@2x.png in Resources */,
 				0916DFD51D55D84800EA33F3 /* 032.gif in Resources */,
@@ -2050,6 +2098,7 @@
 				0916E0701D55D84800EA33F3 /* 083@2x.png in Resources */,
 				0916E00A1D55D84800EA33F3 /* 049@2x.png in Resources */,
 				0916E03B1D55D84800EA33F3 /* 066.gif in Resources */,
+				09412FCC1D5B180F00F06DF0 /* nearby_map_people_bg.png in Resources */,
 				0916E04C1D55D84800EA33F3 /* 071@2x.png in Resources */,
 				0916E0851D55D84800EA33F3 /* 090@2x.png in Resources */,
 				0916E0911D55D84800EA33F3 /* 094@2x.png in Resources */,
@@ -2064,6 +2113,7 @@
 				0916DFDF1D55D84800EA33F3 /* 035.png in Resources */,
 				0916DFFC1D55D84800EA33F3 /* 045.gif in Resources */,
 				0916E0861D55D84800EA33F3 /* 091.gif in Resources */,
+				09412FC01D5B15AB00F06DF0 /* 附近微博.jpg in Resources */,
 				0916DFB51D55D84800EA33F3 /* 021.png in Resources */,
 				0916E0AC1D55D84800EA33F3 /* 103@2x.png in Resources */,
 				0916E0671D55D84800EA33F3 /* 080@2x.png in Resources */,
@@ -2223,6 +2273,7 @@
 				09471D941D4F4890001BA4C1 /* MMDrawerVisualState.m in Sources */,
 				095C86FB1D59B19500B99BB9 /* AFHTTPRequestOperationManager.m in Sources */,
 				095C87021D59B19500B99BB9 /* AFURLSessionManager.m in Sources */,
+				09412FCA1D5B17D100F06DF0 /* WeiboAnnotationView.m in Sources */,
 				098BB53D1D508465003CFA16 /* SDWebImageDownloaderOperation.m in Sources */,
 				098BB5441D508465003CFA16 /* UIImageView+HighlightedWebCache.m in Sources */,
 				0902B3A11D4C82F10011208D /* ThemeManager.m in Sources */,
@@ -2242,6 +2293,7 @@
 				0916DE371D558B9A00EA33F3 /* WXLabel.m in Sources */,
 				09B494781D4B0151005A88EC /* ProfileViewController.m in Sources */,
 				09CF9E431D54357700A658FF /* UIScrollView+PullDownRefresh.m in Sources */,
+				09412FD61D5B1B6B00F06DF0 /* EmoticonView.m in Sources */,
 				098BB53A1D508465003CFA16 /* SDWebImageCompat.m in Sources */,
 				095C86FC1D59B19500B99BB9 /* AFHTTPSessionManager.m in Sources */,
 				09B498C11D4B38FA005A88EC /* BaseNavigationController.m in Sources */,
@@ -2251,15 +2303,18 @@
 				098BB53E1D508465003CFA16 /* SDWebImageManager.m in Sources */,
 				09471D981D4F48B6001BA4C1 /* LeftViewController.m in Sources */,
 				09B4942D1D4AFA66005A88EC /* AppDelegate.m in Sources */,
+				09412FD01D5B198900F06DF0 /* EmoticonInputView.m in Sources */,
 				098BB5131D507C00003CFA16 /* TableViewCell.m in Sources */,
 				095C86E11D5965C900B99BB9 /* RegexKitLite.m in Sources */,
 				095C87011D59B19500B99BB9 /* AFURLResponseSerialization.m in Sources */,
 				09B4945F1D4B00A6005A88EC /* BaseViewController.m in Sources */,
 				0902B3A71D4C9D050011208D /* ThemButton.m in Sources */,
 				09B498D31D4B4C05005A88EC /* SinaWeibo.m in Sources */,
+				09412FC41D5B16BE00F06DF0 /* NearbyUserViewController.m in Sources */,
 				09B4942A1D4AFA66005A88EC /* main.m in Sources */,
 				09574E2E1D518BB400FC0698 /* WeiboCellLauout.m in Sources */,
 				09EE860B1D589A1800298F01 /* LocationViewController.m in Sources */,
+				09412FD31D5B19AE00F06DF0 /* Emoticon.m in Sources */,
 				09B494751D4B0142005A88EC /* MoreViewController.m in Sources */,
 				0975EACE1D5039F800067A9C /* UserModel.m in Sources */,
 				095C87001D59B19500B99BB9 /* AFURLRequestSerialization.m in Sources */,
@@ -2273,6 +2328,7 @@
 				09471D951D4F4890001BA4C1 /* UIViewController+MMDrawerController.m in Sources */,
 				0975EACB1D5039EB00067A9C /* WeiboModel.m in Sources */,
 				098BB53C1D508465003CFA16 /* SDWebImageDownloader.m in Sources */,
+				09412FC71D5B176600F06DF0 /* WeiboAnnotation.m in Sources */,
 				09EE85F61D58254900298F01 /* WXPhotoScrollView.m in Sources */,
 				09EE86011D585D1500298F01 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				09471D931D4F4890001BA4C1 /* MMDrawerController.m in Sources */,

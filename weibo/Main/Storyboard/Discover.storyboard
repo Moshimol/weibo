@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Base Navigation Controller-->
@@ -32,7 +33,34 @@
                     <view key="view" contentMode="scaleToFill" id="pB2-Va-qTR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoS-w1-NzX">
+                                <rect key="frame" x="143" y="77" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1Zq-Ft-SqX"/>
+                                    <constraint firstAttribute="width" constant="100" id="Lq9-bG-uPh"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="附近微博.jpg"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co2-Hl-8mh">
+                                <rect key="frame" x="20" y="77" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="O76-zA-FdY"/>
+                                    <constraint firstAttribute="width" constant="100" id="fUq-w1-WZf"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="附近的人.jpg"/>
+                                <connections>
+                                    <action selector="NearbyUser:" destination="wbk-r3-QjI" eventType="touchUpInside" id="fVl-Mt-BLk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="co2-Hl-8mh" firstAttribute="top" secondItem="WfV-RL-3Pl" secondAttribute="bottom" constant="13" id="2l3-k8-GhD"/>
+                            <constraint firstItem="WoS-w1-NzX" firstAttribute="leading" secondItem="co2-Hl-8mh" secondAttribute="trailing" constant="23" id="3Ku-RK-BtD"/>
+                            <constraint firstItem="co2-Hl-8mh" firstAttribute="leading" secondItem="pB2-Va-qTR" secondAttribute="leadingMargin" id="4Sw-Ni-tpD"/>
+                            <constraint firstItem="WoS-w1-NzX" firstAttribute="top" secondItem="WfV-RL-3Pl" secondAttribute="bottom" constant="13" id="kxk-FG-bPf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="发现" id="oTw-vi-3ii"/>
                 </viewController>
@@ -41,4 +69,8 @@
             <point key="canvasLocation" x="570" y="438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="附近微博.jpg" width="184" height="184"/>
+        <image name="附近的人.jpg" width="184" height="184"/>
+    </resources>
 </document>
